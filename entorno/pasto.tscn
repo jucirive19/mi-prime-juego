@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://entorno/pasto.png" type="Texture" id=1]
+[ext_resource path="res://entorno/pasto.gd" type="Script" id=2]
+[ext_resource path="res://hitbox y hurtox/Hurtbox.tscn" type="PackedScene" id=3]
+
+[sub_resource type="RectangleShape2D" id=1]
+
+[node name="pasto" type="Node2D"]
+
+[node name="Sprite" type="Sprite" parent="."]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 1 )
+centered = false
+offset = Vector2( -16, -16 )
+script = ExtResource( 2 )
+
+[node name="Hurtbox" parent="." instance=ExtResource( 3 )]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
+position = Vector2( 3, 3 )
+scale = Vector2( 0.2, 0.2 )
+shape = SubResource( 1 )
+[connection signal="area_entered" from="Hurtbox" to="Sprite" method="_on_Hurtbox_area_entered"]
+
+[editable path="Hurtbox"]

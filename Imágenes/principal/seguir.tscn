@@ -1,0 +1,7 @@
+[gd_scene format=2]
+
+[node name="seguir" type="Camera2D"]
+current = true
+zoom = Vector2( 0.8, 0.8 )
+process_mode = 0
+smoothing_enabled = true

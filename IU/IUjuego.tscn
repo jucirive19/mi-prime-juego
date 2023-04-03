@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://IU/IUvida.tscn" type="PackedScene" id=1]
+[ext_resource path="res://IU/IUvida.gd" type="Script" id=2]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="IUvida" type="Control" parent="." instance=ExtResource( 1 )]
+margin_right = 57.0
+margin_bottom = 14.0
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

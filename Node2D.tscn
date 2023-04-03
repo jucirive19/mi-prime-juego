@@ -1,0 +1,100 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://principal/jugador.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entorno/arbusto.tscn" type="PackedScene" id=2]
+[ext_resource path="res://entorno/arbol.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Imágenes/principal/seguir.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entorno/camino.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entorno/pasto.tscn" type="PackedScene" id=6]
+[ext_resource path="res://enemigos/murcielago.tscn" type="PackedScene" id=7]
+[ext_resource path="res://IU/IUjuego.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entorno/paredes.tscn" type="PackedScene" id=9]
+[ext_resource path="res://entorno/entorno.tscn" type="PackedScene" id=10]
+[ext_resource path="res://enemigos/Semibos.tscn" type="PackedScene" id=11]
+[ext_resource path="res://enemigos/comodin.tscn" type="PackedScene" id=12]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
+
+[node name="Beta" type="Node2D"]
+
+[node name="entorno" parent="." instance=ExtResource( 10 )]
+
+[node name="camino" parent="." instance=ExtResource( 5 )]
+
+[node name="paredes" parent="." instance=ExtResource( 9 )]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="KinematicBody2D" parent="YSort" instance=ExtResource( 1 )]
+position = Vector2( 96, 72 )
+
+[node name="Sprite" parent="YSort/KinematicBody2D" index="0"]
+frame = 24
+
+[node name="AnimationTree" parent="YSort/KinematicBody2D" index="3"]
+parameters/playback = SubResource( 1 )
+
+[node name="seguir" parent="YSort/KinematicBody2D" instance=ExtResource( 4 )]
+
+[node name="StaticBody2D2" parent="YSort" instance=ExtResource( 3 )]
+position = Vector2( 160, 96 )
+
+[node name="StaticBody2D3" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 64, 104 )
+
+[node name="StaticBody2D4" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 88, 104 )
+
+[node name="StaticBody2D5" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 104, 120 )
+
+[node name="StaticBody2D6" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 112, 104 )
+
+[node name="YSort2" type="YSort" parent="."]
+
+[node name="pasto" parent="YSort2" instance=ExtResource( 6 )]
+position = Vector2( 128, 120 )
+
+[node name="pasto2" parent="YSort2" instance=ExtResource( 6 )]
+position = Vector2( 144, 120 )
+
+[node name="pasto3" parent="YSort2" instance=ExtResource( 6 )]
+position = Vector2( 80, 120 )
+
+[node name="pasto4" parent="YSort2" instance=ExtResource( 6 )]
+position = Vector2( 64, 136 )
+
+[node name="pasto5" parent="YSort2" instance=ExtResource( 6 )]
+position = Vector2( 79, 116 )
+
+[node name="pasto6" parent="YSort2" instance=ExtResource( 6 )]
+position = Vector2( 76, 120 )
+
+[node name="pasto7" parent="YSort2" instance=ExtResource( 6 )]
+position = Vector2( 57, 114 )
+
+[node name="pasto8" parent="YSort2" instance=ExtResource( 6 )]
+position = Vector2( 117, 87 )
+
+[node name="pasto9" parent="YSort2" instance=ExtResource( 6 )]
+position = Vector2( 65, 88 )
+
+[node name="murci" parent="." instance=ExtResource( 7 )]
+position = Vector2( 180, 54 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 8 )]
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 11 )]
+position = Vector2( 125, 25 )
+
+[node name="Semibos" parent="KinematicBody2D" index="0"]
+frame = 7
+
+[node name="KinematicBody2D2" parent="." instance=ExtResource( 12 )]
+
+[editable path="YSort/KinematicBody2D"]
+
+[editable path="CanvasLayer"]
+
+[editable path="KinematicBody2D"]

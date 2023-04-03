@@ -1,0 +1,395 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://principal/jugador.tscn" type="PackedScene" id=1]
+[ext_resource path="res://entorno/camino.tscn" type="PackedScene" id=2]
+[ext_resource path="res://IU/IUjuego.tscn" type="PackedScene" id=3]
+[ext_resource path="res://enemigos/comodin.tscn" type="PackedScene" id=4]
+[ext_resource path="res://entorno/paredes.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entorno/entorno.tscn" type="PackedScene" id=6]
+[ext_resource path="res://entorno/arbusto.tscn" type="PackedScene" id=7]
+[ext_resource path="res://entorno/pasto.tscn" type="PackedScene" id=8]
+[ext_resource path="res://entorno/arbol.tscn" type="PackedScene" id=9]
+[ext_resource path="res://nivles/siginiete_level.tscn" type="PackedScene" id=10]
+[ext_resource path="res://sonidos/zelda-chill-lost-woods-mikel-lofi-remix.wav" type="AudioStream" id=11]
+
+[sub_resource type="AnimationNodeStateMachinePlayback" id=1]
+
+[node name="nivle1" type="Node2D"]
+
+[node name="entorno" parent="." instance=ExtResource( 6 )]
+position = Vector2( -12, -60 )
+region_rect = Rect2( -64, -112, 1216, 576 )
+
+[node name="camino" parent="." instance=ExtResource( 2 )]
+tile_data = PoolIntArray( 196610, 0, 0, 196611, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 393220, 0, 0, 393221, 0, 0, 458756, 0, 0, 458757, 0, 0, 458758, 0, 0, 524294, 0, 0, 524295, 0, 0, 589830, 0, 0, 589831, 0, 0, 589847, 0, 0, 589848, 0, 0, 655366, 0, 0, 655367, 0, 0, 655382, 0, 0, 655383, 0, 0, 655384, 0, 0, 720902, 0, 0, 720903, 0, 0, 720918, 0, 0, 720919, 0, 0, 720920, 0, 0, 786438, 0, 0, 786439, 0, 0, 786452, 0, 0, 786453, 0, 0, 786454, 0, 0, 786455, 0, 0, 851974, 0, 0, 851975, 0, 0, 851976, 0, 0, 851987, 0, 0, 851988, 0, 0, 851989, 0, 0, 851990, 0, 0, 917511, 0, 0, 917512, 0, 0, 917513, 0, 0, 917514, 0, 0, 917515, 0, 0, 917516, 0, 0, 917517, 0, 0, 917518, 0, 0, 917519, 0, 0, 917520, 0, 0, 917521, 0, 0, 917522, 0, 0, 917523, 0, 0, 983047, 0, 0, 983048, 0, 0, 983049, 0, 0, 983050, 0, 0, 983051, 0, 0, 983052, 0, 0, 983053, 0, 0, 983054, 0, 0, 983055, 0, 0, 983056, 0, 0, 983057, 0, 0, 1048586, 0, 0, 1048587, 0, 0, 1048588, 0, 0, 1048589, 0, 0, 1048590, 0, 0, 1048591, 0, 0, 1048592, 0, 0, 1048593, 0, 0 )
+
+[node name="paredes" parent="." instance=ExtResource( 5 )]
+position = Vector2( -6, -59 )
+tile_data = PoolIntArray( 0, 0, 0, 1, 0, 1, 2, 0, 1, 3, 0, 1, 4, 0, 1, 5, 0, 1, 6, 0, 1, 7, 0, 1, 8, 0, 1, 9, 0, 1, 10, 0, 1, 11, 0, 1, 12, 0, 1, 13, 0, 1, 14, 0, 1, 15, 0, 1, 16, 0, 1, 17, 0, 1, 18, 0, 1, 19, 0, 1, 20, 0, 2, 65536, 0, 65540, 65537, 0, 131073, 65538, 0, 131073, 65539, 0, 65542, 65540, 0, 65541, 65541, 0, 131073, 65542, 0, 131073, 65543, 0, 131073, 65544, 0, 65542, 65545, 0, 65541, 65546, 0, 131073, 65547, 0, 131073, 65548, 0, 131073, 65549, 0, 131073, 65550, 0, 131073, 65551, 0, 131073, 65552, 0, 131073, 65553, 0, 131073, 65554, 0, 131073, 65555, 0, 131073, 65556, 0, 131074, 131072, 0, 65539, 131075, 0, 65540, 131076, 0, 131074, 131080, 0, 131072, 131081, 0, 65543, 196608, 0, 65539, 196611, 0, 131075, 196617, 0, 131076, 196618, 0, 1, 196619, 0, 2, 262144, 0, 65539, 262153, 0, 65536, 262154, 0, 65541, 262155, 0, 196613, 262156, 0, 6, 262157, 0, 2, 327680, 0, 131076, 327681, 0, 2, 327689, 0, 131072, 327690, 0, 131074, 327692, 0, 131072, 327693, 0, 9, 327694, 0, 2, 393216, 0, 65536, 393217, 0, 131077, 393218, 0, 2, 393229, 0, 131072, 393230, 0, 65543, 458752, 0, 65536, 458753, 0, 65537, 458754, 0, 65538, 458766, 0, 65539, 524288, 0, 65536, 524289, 0, 65537, 524290, 0, 65538, 524300, 0, 0, 524301, 0, 1, 524302, 0, 131079, 589824, 0, 65536, 589825, 0, 65537, 589826, 0, 65538, 589834, 0, 0, 589835, 0, 1, 589836, 0, 131078, 589837, 0, 65537, 589838, 0, 65538, 655360, 0, 65536, 655361, 0, 65537, 655362, 0, 131077, 655363, 0, 2, 655369, 0, 0, 655370, 0, 131078, 655371, 0, 65537, 655372, 0, 65537, 655373, 0, 65541, 655374, 0, 131074, 720896, 0, 131072, 720897, 0, 131073, 720898, 0, 131073, 720899, 0, 196613, 720900, 0, 196609, 720901, 0, 196609, 720902, 0, 196609, 720903, 0, 196609, 720904, 0, 196609, 720905, 0, 196614, 720906, 0, 131073, 720907, 0, 131073, 720908, 0, 131073, 720909, 0, 131074 )
+
+[node name="enemigos" type="YSort" parent="."]
+
+[node name="Comodin" parent="enemigos" instance=ExtResource( 4 )]
+position = Vector2( 191, 262 )
+
+[node name="Comodin7" parent="enemigos" instance=ExtResource( 4 )]
+position = Vector2( 191, 262 )
+
+[node name="Comodin6" parent="enemigos" instance=ExtResource( 4 )]
+position = Vector2( 114, 224 )
+
+[node name="Comodin9" parent="enemigos" instance=ExtResource( 4 )]
+position = Vector2( 119, 173 )
+
+[node name="Comodin10" parent="enemigos" instance=ExtResource( 4 )]
+position = Vector2( 94, 123 )
+
+[node name="Comodin11" parent="enemigos" instance=ExtResource( 4 )]
+position = Vector2( 81, 96 )
+
+[node name="Comodin8" parent="enemigos" instance=ExtResource( 4 )]
+position = Vector2( 152, 245 )
+
+[node name="Comodin4" parent="enemigos" instance=ExtResource( 4 )]
+position = Vector2( 228, 280 )
+
+[node name="Comodin5" parent="enemigos" instance=ExtResource( 4 )]
+position = Vector2( 228, 280 )
+
+[node name="Comodin3" parent="enemigos" instance=ExtResource( 4 )]
+position = Vector2( 220, 245 )
+
+[node name="Comodin2" parent="enemigos" instance=ExtResource( 4 )]
+position = Vector2( 340, 217 )
+
+[node name="Arboles y arbustos" type="YSort" parent="."]
+
+[node name="StaticBody2D" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 37, 128 )
+
+[node name="StaticBody2D7" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 64, 163 )
+
+[node name="StaticBody2D8" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 62, 187 )
+
+[node name="StaticBody2D9" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 63, 226 )
+
+[node name="StaticBody2D39" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 147, 180 )
+
+[node name="StaticBody2D46" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 146, 164 )
+
+[node name="StaticBody2D47" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 149, 132 )
+
+[node name="StaticBody2D48" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 148, 97 )
+
+[node name="StaticBody2D40" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 244, 183 )
+
+[node name="StaticBody2D45" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 243, 150 )
+
+[node name="StaticBody2D49" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 243, 119 )
+
+[node name="StaticBody2D41" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 277, 177 )
+
+[node name="StaticBody2D42" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 303, 188 )
+
+[node name="StaticBody2D57" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 411, 177 )
+
+[node name="StaticBody2D43" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 330, 171 )
+
+[node name="StaticBody2D44" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 352, 137 )
+
+[node name="StaticBody2D2" parent="Arboles y arbustos" instance=ExtResource( 9 )]
+position = Vector2( 2, 35 )
+
+[node name="StaticBody2D3" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 4, 56 )
+
+[node name="StaticBody2D4" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 4, 68 )
+
+[node name="StaticBody2D5" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 5, 84 )
+
+[node name="StaticBody2D6" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 8, 101 )
+
+[node name="StaticBody2D14" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 61, 52 )
+
+[node name="StaticBody2D23" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 93, 62 )
+
+[node name="StaticBody2D24" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 93, 79 )
+
+[node name="StaticBody2D26" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 93, 90 )
+
+[node name="StaticBody2D27" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 93, 99 )
+
+[node name="StaticBody2D28" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 107, 103 )
+
+[node name="StaticBody2D29" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 125, 132 )
+
+[node name="StaticBody2D31" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 127, 199 )
+
+[node name="StaticBody2D32" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 138, 199 )
+
+[node name="StaticBody2D33" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 149, 214 )
+
+[node name="StaticBody2D34" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 162, 214 )
+
+[node name="StaticBody2D35" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 245, 215 )
+
+[node name="StaticBody2D36" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 273, 215 )
+
+[node name="StaticBody2D38" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 286, 211 )
+
+[node name="StaticBody2D37" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 260, 214 )
+
+[node name="StaticBody2D30" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 125, 124 )
+
+[node name="StaticBody2D25" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 93, 69 )
+
+[node name="StaticBody2D15" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 60, 44 )
+
+[node name="StaticBody2D16" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 54, 38 )
+
+[node name="StaticBody2D17" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 42, 36 )
+
+[node name="StaticBody2D18" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 32, 36 )
+
+[node name="StaticBody2D19" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 24, 45 )
+
+[node name="StaticBody2D20" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 24, 55 )
+
+[node name="StaticBody2D21" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 24, 66 )
+
+[node name="StaticBody2D22" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 24, 70 )
+
+[node name="StaticBody2D10" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 289, 294 )
+
+[node name="StaticBody2D50" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 283, 262 )
+
+[node name="StaticBody2D51" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 283, 252 )
+
+[node name="StaticBody2D52" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 286, 244 )
+
+[node name="StaticBody2D53" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 285, 236 )
+
+[node name="StaticBody2D54" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 298, 236 )
+
+[node name="StaticBody2D55" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 311, 235 )
+
+[node name="StaticBody2D56" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 364, 204 )
+
+[node name="StaticBody2D63" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 375, 204 )
+
+[node name="StaticBody2D64" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 381, 197 )
+
+[node name="StaticBody2D65" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 384, 190 )
+
+[node name="StaticBody2D59" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 334, 222 )
+
+[node name="StaticBody2D60" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 346, 222 )
+
+[node name="StaticBody2D61" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 359, 221 )
+
+[node name="StaticBody2D62" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 365, 214 )
+
+[node name="StaticBody2D58" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 319, 222 )
+
+[node name="StaticBody2D11" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 122, 293 )
+
+[node name="StaticBody2D12" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 140, 293 )
+
+[node name="StaticBody2D13" parent="Arboles y arbustos" instance=ExtResource( 7 )]
+position = Vector2( 270, 295 )
+
+[node name="pasto" type="YSort" parent="."]
+
+[node name="pasto" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 165, 298 )
+
+[node name="pasto7" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 126, 146 )
+
+[node name="pasto8" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 126, 151 )
+
+[node name="pasto9" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 127, 157 )
+
+[node name="pasto10" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 128, 162 )
+
+[node name="pasto11" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 127, 168 )
+
+[node name="pasto12" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 127, 173 )
+
+[node name="pasto13" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 127, 178 )
+
+[node name="pasto14" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 127, 183 )
+
+[node name="pasto15" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 127, 187 )
+
+[node name="pasto16" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 127, 191 )
+
+[node name="pasto17" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 127, 196 )
+
+[node name="pasto18" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 143, 213 )
+
+[node name="pasto19" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 143, 219 )
+
+[node name="pasto20" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 177, 221 )
+
+[node name="pasto21" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 182, 221 )
+
+[node name="pasto22" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 188, 221 )
+
+[node name="pasto23" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 194, 221 )
+
+[node name="pasto24" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 199, 221 )
+
+[node name="pasto25" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 204, 221 )
+
+[node name="pasto26" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 209, 221 )
+
+[node name="pasto27" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 214, 221 )
+
+[node name="pasto28" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 220, 221 )
+
+[node name="pasto29" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 226, 221 )
+
+[node name="pasto30" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 226, 221 )
+
+[node name="pasto31" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 233, 221 )
+
+[node name="pasto32" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 239, 221 )
+
+[node name="pasto2" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 182, 297 )
+
+[node name="pasto3" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 200, 299 )
+
+[node name="pasto4" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 219, 300 )
+
+[node name="pasto5" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 236, 299 )
+
+[node name="pasto6" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 253, 300 )
+
+[node name="pasto33" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 302, 218 )
+
+[node name="pasto34" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 302, 213 )
+
+[node name="pasto35" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 302, 207 )
+
+[node name="pasto36" parent="pasto" instance=ExtResource( 8 )]
+position = Vector2( 307, 205 )
+
+[node name="CanvasLayer" parent="." instance=ExtResource( 3 )]
+
+[node name="KinematicBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 397, 171 )
+
+[node name="AnimationTree" parent="KinematicBody2D" index="3"]
+parameters/playback = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="KinematicBody2D"]
+current = true
+
+[node name="CanvasLayer2" parent="." instance=ExtResource( 3 )]
+
+[node name="nexlevel" parent="." instance=ExtResource( 10 )]
+position = Vector2( 48, 61 )
+scale = Vector2( 0.390625, 0.3125 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 11 )
+autoplay = true
+
+[editable path="entorno"]
+
+[editable path="KinematicBody2D"]
